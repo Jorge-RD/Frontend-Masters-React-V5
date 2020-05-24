@@ -15,8 +15,11 @@
   },
   "scripts": {
     "prettier": "prettier --write \"src/**/*.{js,jsx}\"",
+    "prettier:check": "prettier --check \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "dev": "parcel src/index.html"
+    "fix": "yarn prettier && yarn lint --fix",
+    "verify": "yarn prettier:check && yarn lint",
+    "dev": "parcel public/index.html"
   },
   "dependencies": {
     "@frontendmasters/pet": "^1.0.3",
