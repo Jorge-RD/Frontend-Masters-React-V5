@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
@@ -19,7 +20,8 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "fix": "yarn prettier && yarn lint --fix",
     "verify": "yarn prettier:check && yarn lint",
-    "dev": "parcel public/index.html"
+    "dev": "parcel public/index.html",
+    "dev:mock": "cross-env PET_MOCK=mock yarn dev"
   },
   "dependencies": {
     "@frontendmasters/pet": "^1.0.3",
