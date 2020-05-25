@@ -9,7 +9,6 @@ const App = () => {
     <div>
       <h1 id="something-important">Adopt Me</h1>
       <SearchParams />
-      <Pet name={"Luna"} animal={"Dog"} breed={"Havanese"} />
     </div>
   );
 };
