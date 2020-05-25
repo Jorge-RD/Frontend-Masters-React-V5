@@ -8,14 +8,15 @@ export default function SearchParams() {
   const [breeds, setBreeds] = useState([]);
 
   const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
-  const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", []);
+  const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
 
-  useEffect(async () => {
+  useEffect(() => {
     setBreeds([]);
     setBreed("");
-    const { breeds } = await pet.breeds(animal);
-    const breedString = breeds.map(({ name }) => name);
-    setBreed(breedString);
+    pet.breeds(animal).then(({ breeds }) => {
+      const breedStrings = breeds.map(({ name }) => name);
+      setBreeds(breedStrings);
+    });
   }, [animal]);
 
   return (

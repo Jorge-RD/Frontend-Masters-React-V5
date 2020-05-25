@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function SearchParams() {
-  const [location, setLocation] = useState("Santo Domingo");
+  const [location, setLocation] = useState("Seattle, WA");
 
   const handleChangeLocation = (event) => {
     setLocation(event.target.value);
