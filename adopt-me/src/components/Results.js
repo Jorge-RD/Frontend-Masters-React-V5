@@ -8,15 +8,17 @@ export default function Results({ pets }) {
     pets.map(({ type, id, name, breeds, photos, contact }) => {
       const { primary } = breeds;
       const { state, city } = contact.address;
-      <Pet
-        animal={type}
-        key={id}
-        id={id}
-        name={name}
-        breed={primary}
-        media={photos}
-        location={`${state} - ${city}}`}
-      />;
+      return (
+        <Pet
+          animal={type}
+          key={id}
+          id={id}
+          name={name}
+          breed={primary}
+          media={photos}
+          location={`${state} - ${city}}`}
+        />
+      );
     })
   );
   return <div className="search">{content}</div>;
